@@ -1,5 +1,5 @@
-"""Paso 2: valida los datos, el split y el escalado. Uso: python src/validate_data.py"""
-from pandas.util import hash_pandas_object
+"""Valida los datos, el split y el escalado. Uso: python src/validate_data.py"""
+from pandas.util import hash_pandas_object # pylint: disable=no-name-in-module
 
 from data import TARGET, SCALE_COLS, load_data, make_scaler, split_data
 
