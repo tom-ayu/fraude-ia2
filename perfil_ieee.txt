@@ -1,0 +1,73 @@
+## 1. Los 5 archivos
+train_transaction: 590,540 filas | 394 columnas | tiene isFraud: True
+train_identity: 144,233 filas | 41 columnas | tiene isFraud: False
+test_transaction: 506,691 filas | 393 columnas | tiene isFraud: False
+test_identity: 141,907 filas | 41 columnas | tiene isFraud: False
+sample_submission: 506,691 filas | 2 columnas | tiene isFraud: True
+Columnas de train_transaction ausentes en test_transaction: ['isFraud']
+IDs en común train/test: 0
+IDs de sample_submission iguales a los de test_transaction: True
+Valores de isFraud en sample_submission: [0.5]
+Cobertura de identidad en train: 24.4%
+Cobertura de identidad en test: 28.0%
+TransactionDT train: 86400 a 15811131 (182 días)
+TransactionDT test: 18403224 a 34214345 (183 días)
+
+## 2. Train (ligero)
+Filas: 590,540 | fraude: 20,663 (3.50%) | TransactionID duplicados: 0
+Tasa de fraude según has_identity:
+  False: 446,307 filas | fraude 2.09%
+  True: 144,233 filas | fraude 7.85%
+Tasa de fraude por bloques de 30 días de TransactionDT:
+  0: 130,968 filas | fraude 2.48%
+  1: 89,838 filas | fraude 4.04%
+  2: 91,768 filas | fraude 4.03%
+  3: 98,027 filas | fraude 3.93%
+  4: 85,303 filas | fraude 3.47%
+  5: 86,525 filas | fraude 3.40%
+  6: 8,111 filas | fraude 4.18%
+Tasa de fraude por ProductCD:
+  C: 68,519 filas | fraude 11.69%
+  H: 33,024 filas | fraude 4.77%
+  R: 37,699 filas | fraude 3.78%
+  S: 11,628 filas | fraude 5.90%
+  W: 439,670 filas | fraude 2.04%
+Fraude en el 70% inicial: 3.52% | en el 30% final: 3.46%
+
+## 3. Dataset unido (--full)
+Forma: 590,540 filas, 434 columnas
+Filas duplicadas (sin TransactionID): 3
+Categóricas (31), valores distintos:
+DeviceInfo       1786
+id_33             260
+id_31             130
+id_30              75
+R_emaildomain      60
+P_emaildomain      59
+ProductCD           5
+card6               4
+card4               4
+id_34               4
+id_15               3
+M4                  3
+id_23               3
+M2                  2
+M1                  2
+id_12               2
+M9                  2
+M8                  2
+M7                  2
+M6                  2
+M5                  2
+M3                  2
+id_27               2
+id_28               2
+id_29               2
+id_16               2
+id_35               2
+id_36               2
+id_37               2
+id_38               2
+DeviceType          2
+Columnas con más de 50% de nulos: 214 | más de 90%: 12 | sin nulos: 20
+Columnas con más de 90% de nulos: ['dist2', 'D7', 'id_07', 'id_08', 'id_18', 'id_21', 'id_22', 'id_23', 'id_24', 'id_25', 'id_26', 'id_27']
